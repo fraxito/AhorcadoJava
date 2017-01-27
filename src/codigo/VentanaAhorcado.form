@@ -26,10 +26,6 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="pantalla" min="-2" pref="330" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
                       <Component id="panelAhorcado" min="-2" pref="180" max="-2" attributes="0"/>
                   </Group>
@@ -98,8 +94,9 @@
                       <Component id="jButton44" min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="17" max="32767" attributes="0"/>
           </Group>
+          <Component id="pantalla" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">

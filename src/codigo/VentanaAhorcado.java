@@ -16,7 +16,9 @@ import javax.swing.JButton;
  */
 public class VentanaAhorcado extends javax.swing.JFrame {
 
-    String palabraOculta = "CETYSSSS";
+    String palabraOculta = "PLATAOPLOMO";
+    
+    String 
     
     int numeroFallos = 0;
     
@@ -28,6 +30,18 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         
         //dibuja la imagen del ahorcado sin fallos
         dibujaImagen(0);
+        ponGuiones();
+    }
+    
+    private void ponGuiones(){
+        //crea un nuevo string con tantos guiones bajos y espacios
+        //en blanco como letras tenga la palabra a adivinar
+        String palabraConGuiones = "";
+        for (int i=0; i< palabraOculta.length(); i++){
+            palabraConGuiones = palabraConGuiones + "_ ";
+        }
+        pantalla.setText(palabraConGuiones);
+        
     }
     
     private void dibujaImagen(int numeroFallos){
@@ -337,9 +351,6 @@ public class VentanaAhorcado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(panelAhorcado, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -402,7 +413,8 @@ public class VentanaAhorcado extends javax.swing.JFrame {
                         .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(pantalla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
