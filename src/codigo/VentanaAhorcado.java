@@ -7,6 +7,7 @@ package codigo;
 
 import java.awt.Image;
 import java.net.URL;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -16,9 +17,9 @@ import javax.swing.JButton;
  */
 public class VentanaAhorcado extends javax.swing.JFrame {
 
-    String palabraOculta = "PLATAOPLOMO";
+    String palabraOculta;
     
-    String 
+    String [] listaDePalabras ;
     
     int numeroFallos = 0;
     
@@ -27,10 +28,23 @@ public class VentanaAhorcado extends javax.swing.JFrame {
      */
     public VentanaAhorcado() {
         initComponents();
+
+        eligePalabraParaAdivinar();
         
         //dibuja la imagen del ahorcado sin fallos
         dibujaImagen(0);
         ponGuiones();
+    }
+    
+    private void eligePalabraParaAdivinar(){
+        
+        listaDePalabras = new String[] {"CETYS","MERCURIO","VENUS","TIERRA","MARTE","JUPITER","SATURNO","URANO","NEPTUNO","PLUTON"}; 
+        
+        Random aleatorio = new Random();
+        //elijo una posiciñon al azar
+        int posicionElegida = aleatorio.nextInt( listaDePalabras.length);
+        //guardo en la palabraOculta la que haya salido al azar
+        palabraOculta = listaDePalabras[posicionElegida];
     }
     
     private void ponGuiones(){
@@ -57,6 +71,7 @@ public class VentanaAhorcado extends javax.swing.JFrame {
            case 3: nombreImagen = getClass().getResource("/imagenes/ahorcado_3.png"); break;
            case 4: nombreImagen = getClass().getResource("/imagenes/ahorcado_4.png"); break;
            case 5: nombreImagen = getClass().getResource("/imagenes/ahorcado_5.png"); break;
+           case -1 : nombreImagen = getClass().getResource("/imagenes/acertasteTodo.png"); break;
            default : nombreImagen = getClass().getResource("/imagenes/ahorcado_fin.png"); 
        }
        
@@ -87,6 +102,12 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         numeroFallos++;
         dibujaImagen(numeroFallos);
        }
+       
+       if (!pantalla.getText().contains("_")){
+            dibujaImagen(-1);
+       }
+       
+       
     }
 //    
 //                      palabraConGuiones = palabraConGuiones.substring(0, 2*i) 
